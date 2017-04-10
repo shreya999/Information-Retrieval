@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+
+<textarea id="text" cols="45" rows="3"></textarea>
+ 
+<input 
+  onclick="responsiveVoice.speak($('#text').val(),'US English Female');" 
+  type="button" 
+  value='🔊 Play' 
+/>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script type="text/javascript" src="js\jquery-3.1.1.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+
+<!--Import Custom Styles here-->
+<link rel="stylesheet" type="text/css" href="css/customstyle.css" />
+<!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!--Let browser know Website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<style type="text/css">
+body {
+	margin: 0;
+	background: #000;
+}
+
+video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+	transition: 1s opacity;
+}
+
+.stopfade {
+	opacity: .5;
+}
+
+@media screen and (max-width: 500px) {
+	div {
+		width: 70%;
+	}
+}
+
+@media scre en and (max-device-width: 800px) {
+	html {
+		background: url(//demosthenes.info/assets/images/polina.jpg) #000
+			no-repeat center center fixed;
+	}
+	#bgvid {
+		display: none;
+	}
+}
+}
+</style>
+
+
+<script>
+	$(document).ready(function(){
+		$('#submit').click(function(event){
+			event.preventDefault();
+			var queryString = $('#query').val();
+			$.get('ActionServlet', {query:queryString}, function(responseText){
+				document.getElement
+				$('#res_container').html(responseText);
+			});
+		});
+	});
+</script>
+
+</head>
+<body>
+	<section id="cover">
+	<div id="header-buttons">
+		<table id="header" class="container">
+			<br>
+			<td class="nav">
+				<ul class="right">
+					<li id="active"><a href="index.html">Home</a></li>
+					</li>
+					<li><a href="about-us.html">About Us</a></li>
+					<li><a href="team.html">Team</a></li>
+				</ul>
+			</td>
+			</tr>
+		</table>
+	</div>
+	</section>
+
+	<div id="query_container">
+		<img id="img" src="images/crawler.png" alt="Crawler Logo">
+		<div class="row">
+
+			<h1 style="color: white; text-align: center;">Crawler </h1>
+			<h2 style="color: white; text-align: center;">Let's talk about
+				Demonetization!</h2>
+			<form>
+				<div id="custom-search-input">
+					<div class="input-group col-md-12">
+						<input style="font-size: 150%;" type="text" id="query"
+							class="form-control input-lg" placeholder="Shoot a query...." />
+						<span class="input-group-btn">
+							<button class="btn btn-info btn-lg" type="submit" id="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<div id="res_container">
+		<div class="row">
+			<div class="col s6 offset-s6"></div>
+		</div>
+	</div>
+
+	<video poster="images/black.jpg" id="bgvid" playsinline autoplay muted
+		loop> <source
+		src="http://thenewcode.com/assets/videos/lake.webm" type="video/webm">
+	<source src="http://thenewcode.com/assets/videos/lake.mp4"
+		type="video/mp4"></video>
+
+
+
+	
+	<br><b><br><br><b><br><br><b><br><br><b><br><br><br><br><br><br><br>
+	<div class="footer">
+		&copy; copyright <strong> LittleChamps</strong> 2016-2017
+	</div>
+
+</body>
+</html>
